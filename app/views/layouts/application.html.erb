@@ -8,8 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<%= link_to "About-Crypto", about_crypto_path %> | 
-<%= link_to "Home", root_path %>
+<%= render 'home/navbar' %> 
   <body>
 
     <%= yield %>
