@@ -1,2 +1,13 @@
-<h1>Home Page</h1>
+<h1>Crypto Page</h1>
+<br /><br /><br />
+<% @coins %>
+
+<% for a in @coins %>
+  <% for coin in @my_coins %>
+    <% if coin == a["symbol"] %>
+      <%= a["name"]%> : $<%= a["price_usd"] %><br />
+      Rank: <%= a["rank"] %><br />
+    <% end %> 
+  <% end %>
+<% end %>     
 
