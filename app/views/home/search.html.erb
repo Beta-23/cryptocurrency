@@ -1,0 +1,10 @@
+<h1>Lookup your favarite crypto!</h1>
+
+<%= form_tag search_crypto_path, :method => 'POST' do %>
+  <%= text_field_tag 'sym', nil, placeholder: 'Enter Cypto Symbol', size: 50 %>
+  <%= submit_tag 'Lookup Crypto Now' %>
+<% end %>
+
+<br /><br />
+
+<%= @symbol %>

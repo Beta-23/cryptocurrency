@@ -16,4 +16,8 @@ class HomeController < ApplicationController
 
   def about
   end
+
+  def search
+    @symbol = params[:sym] 
+  end
 end
