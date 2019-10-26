@@ -1,0 +1,18 @@
+<h1>Lookup your favarite crypto!</h1>
+
+<%= form_tag search_crypto_path, :method => 'POST' do %>
+  <%= text_field_tag 'sym', nil, :required => true, placeholder: 'Enter Cypto Symbol', size: 50 %>
+  <%= submit_tag 'Lookup Crypto Now' %>
+<% end %>
+
+<br /><br />
+
+<% if @symbol %>
+  <% for a in @search_coin %>
+      <% if @symbol == a["symbol"] %>
+        <%= a["name"]%> : $<%= a["price_usd"] %><br />
+        Rank: <%= a["rank"] %><br />
+      <% end %> 
+  <% end %>   
+<% end %>
+
