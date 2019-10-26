@@ -6,8 +6,13 @@
 <% end %>
 
 <br /><br />
-<!-- converts symbol params to upercase -->
+
 <% if @symbol %>
-    <% @symbol = @symbol.upcase %>
-    <%= @symbol %>
+  <% for a in @search_coin %>
+      <% if @symbol == a["symbol"] %>
+        <%= a["name"]%> : $<%= a["price_usd"] %><br />
+        Rank: <%= a["rank"] %><br />
+      <% end %> 
+  <% end %>   
 <% end %>
+
