@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
   get 'about-crypto', to: 'home#about'
   get 'search-crypto', to: 'home#search'
