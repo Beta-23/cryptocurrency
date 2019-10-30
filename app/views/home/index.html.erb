@@ -1,5 +1,6 @@
 <h1>Crypto Page</h1>
 <br /><br />
+
 <% @coins %>
 
 <% for a in @coins %>
@@ -9,5 +10,13 @@
       Rank: <%= a["rank"] %><br />
     <% end %> 
   <% end %>
-<% end %>     
+<% end %>  
+<br />
+
+<div>
+  <% if current_user %>
+      <button type="button" class="btn btn-info"><%= link_to "Click Here to Search-Crypto", search_crypto_path %>
+      </button>  
+  <% end %>
+</div>
 
