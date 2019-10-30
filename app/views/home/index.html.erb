@@ -13,9 +13,9 @@
 <% end %>  
 <br />
 
-<div class="subscribe-btn">
+<div>
   <% if current_user %>
-      <button><%= link_to "Click Here to Search-Crypto", search_crypto_path, class: "gradient-button gradient-button-4 btn-lg btn-xlarge" %>
+      <button type="button" class="btn btn-info"><%= link_to "Click Here to Search-Crypto", search_crypto_path %>
       </button>  
   <% end %>
 </div>
