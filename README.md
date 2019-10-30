@@ -7,7 +7,17 @@ Things you may want to cover:
 
 * Ruby version
 
+```
+Ruby 2.4
+```
 * System dependencies
+```
+'rails', '~> 5.1.7'
+'devise', '>= 4.7.1'
+```
+```Bootstrap
+'bootstrap-sass', '>= 3.4.1'
+```
 
 * Configuration
 
