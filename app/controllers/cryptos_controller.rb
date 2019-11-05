@@ -1,6 +1,7 @@
 class CryptosController < ApplicationController
   before_action :set_crypto, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :logged_user, only: [:edit, :show, :update, :destroy]
   # GET /cryptos
   # GET /cryptos.json
   def index
@@ -70,5 +71,11 @@ class CryptosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def crypto_params
       params.require(:crypto).permit(:symbol, :user_id, :cost_per, :amount_owned)
+    end
+
+    # User can only edit, :show, :update, :destroy their own cryptos listing.
+    def logged_user
+      @logged = current_user.cryptos.find_by(id: params[:id])
+      redirect_to cryptos_path, notice: "Not Authorize To Make Changes!" if @logged.nil?
     end
 end
