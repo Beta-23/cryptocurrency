@@ -1,4 +1,6 @@
-
+<%= link_to 'Back', cryptos_path %>
+<br />
+<br />
 <p>
   <strong>Symbol:</strong>
   <%= @crypto.symbol %>
@@ -20,4 +22,4 @@
 </p>
 
 <%= link_to 'Edit', edit_crypto_path(@crypto) %> |
-<%= link_to 'Back', cryptos_path %>
+<%= link_to 'Delete', cryptos_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' } %>
