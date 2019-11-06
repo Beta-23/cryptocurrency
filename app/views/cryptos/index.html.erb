@@ -3,6 +3,7 @@
 <table class="success table table-striped table-bordered table-hover">
   <thead>
     <tr>
+      <th>Name</th>
       <th>Symbol</th>
       <th>Cost per</th>
       <th>Amount owned</th>
@@ -13,7 +14,15 @@
   <tbody>
     <% @cryptos.each do |crypto| %>
       <% if crypto.user_id == current_user.id %>
+        <% if crypto.symbol %>
+          <% crypto.symbol = crypto.symbol.upcase %>
+        <% end %>
         <tr>
+        <% for a in @lookup_crypto %>
+            <% if crypto.symbol == a["symbol"] %>
+                  <td><%= a["name"]%></td>
+            <% end %>
+        <% end %>
           <td><%= crypto.symbol %></td>
           <td><%= crypto.cost_per %></td>
           <td><%= crypto.amount_owned %></td>
