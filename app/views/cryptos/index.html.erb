@@ -7,7 +7,6 @@
       <th>Symbol</th>
       <th>Cost per</th>
       <th>Amount owned</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,15 +19,12 @@
         <tr>
         <% for a in @lookup_crypto %>
             <% if crypto.symbol == a["symbol"] %>
-                  <td><%= a["name"]%></td>
+                  <td><%= link_to a["name"], crypto %></td>
             <% end %>
         <% end %>
           <td><%= crypto.symbol %></td>
           <td><%= crypto.cost_per %></td>
           <td><%= crypto.amount_owned %></td>
-          <td><%= link_to 'Show', crypto %></td>
-          <td><%= link_to 'Edit', edit_crypto_path(crypto) %></td>
-          <td><%= link_to 'Destroy', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>  
     <% end %>
