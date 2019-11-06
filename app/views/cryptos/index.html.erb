@@ -6,9 +6,11 @@
       <th>Name</th>
       <th>Symbol</th>
       <th>Current Price</th>
-      <th>Market Value Crypto</th>
+      <th>Current Value</th>
+      <th>Cost Basis</th>
+      <th>Gain/Loss</th>
       <th>Cost Per Crypto </th>
-      <th>Amount owned</th>  
+      <th>Quantity</th>  
     </tr>
   </thead>
 
@@ -23,12 +25,19 @@
               <% if crypto.symbol == a["symbol"] %>
                 <td><%= link_to a["name"], crypto %></td>
                 <td><%= crypto.symbol %></td>
-                <!-- if need to change decimal total value, use the ruby helper method: number_to_currency (a["price_usd"]) -->
+                <!-- if need to change decimal total value, use the ruby helper method: number_to_currency (a["price_usd"]) and .to_d converts string into decimal-->
                 <td>$<%= a["price_usd"] %></td>
+                <!-- Current Value -->
                 <td><%= number_to_currency (a["price_usd"].to_d * crypto.amount_owned) %></td>
+                <!-- Cost Basis -->
+                <td><%= number_to_currency (crypto.cost_per * crypto.amount_owned) %></td>
+                <!-- Gain/Loss -->
+                <td><%= number_to_currency ((a["price_usd"].to_d * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)) %></td>
               <% end %>
           <% end %>
+          <!-- Cost Per Crypto -->
           <td>$<%= crypto.cost_per %></td>
+          <!-- Quantity -->
           <td><%= crypto.amount_owned %></td> 
         </tr>
       <% end %>  
