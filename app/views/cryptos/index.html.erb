@@ -1,10 +1,9 @@
 <h1>Cryptos</h1>
-
-<table>
+<br />
+<table class="success table table-striped table-bordered table-hover">
   <thead>
     <tr>
       <th>Symbol</th>
-      <th>User</th>
       <th>Cost per</th>
       <th>Amount owned</th>
       <th colspan="3"></th>
@@ -16,7 +15,6 @@
       <% if crypto.user_id == current_user.id %>
         <tr>
           <td><%= crypto.symbol %></td>
-          <td><%= crypto.user_id %></td>
           <td><%= crypto.cost_per %></td>
           <td><%= crypto.amount_owned %></td>
           <td><%= link_to 'Show', crypto %></td>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Crypto', new_crypto_path %>
+<%= link_to 'New Crypto', new_crypto_path, class:"btn btn-info" %>

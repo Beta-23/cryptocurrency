@@ -11,26 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field ol-xs-6 .col-sm-4">
     <%= form.label :symbol %>
     <%= form.text_field :symbol, id: :crypto_symbol %>
   </div>
 
-  <div class="field">
-    <%= form.number_field :user_id, value: current_user.id, type: "hidden" %>
+  <div class="field ol-xs-6 .col-sm-4">
+    <% form.number_field :user_id, value: current_user.id, type: "hidden" %>
   </div>
 
-  <div class="field">
+  <div class="field ol-xs-6 .col-sm-4">
     <%= form.label :cost_per %>
     <%= form.text_field :cost_per, id: :crypto_cost_per %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount_owned %>
+  <div class="field ol-xs-6 .col-sm-4">
+    <%= form.label :amt_owned %>
     <%= form.text_field :amount_owned, id: :crypto_amount_owned %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit class:"btn btn-info" %>
   </div>
 <% end %>
