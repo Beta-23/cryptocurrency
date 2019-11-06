@@ -6,7 +6,8 @@
 <% for a in @coins %>
   <% for coin in @my_coins %>
     <% if coin == a["symbol"] %>
-      <%= a["name"]%> : $<%= a["price_usd"] %><br />
+        <!-- if you need accurate crypto price with decimals, remove the number_to_currency ruby method -->
+      <%= a["name"]%> : <%= number_to_currency (a["price_usd"]) %><br />
       Rank: <%= a["rank"] %><br />
     <% end %> 
   <% end %>

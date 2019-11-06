@@ -3,10 +3,12 @@
 <table class="success table table-striped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Name</th>
       <th>Symbol</th>
-      <th>Cost per</th>
+      <th>Name</th>
+      <th>Current Price</th>
+      <th>Cost Per Crypto</th>
       <th>Amount owned</th>
+      <th>Crypto Value</th>  
     </tr>
   </thead>
 
@@ -16,16 +18,19 @@
         <% if crypto.symbol %>
           <% crypto.symbol = crypto.symbol.upcase %>
         <% end %>
-        <tr>
-        <% for a in @lookup_crypto %>
-            <% if crypto.symbol == a["symbol"] %>
-                  <td><%= link_to a["name"], crypto %></td>
-            <% end %>
-        <% end %>
-          <td><%= crypto.symbol %></td>
-          <td><%= crypto.cost_per %></td>
-          <td><%= crypto.amount_owned %></td>
-        </tr>
+          <tr>
+            <td><%= crypto.symbol %></td>
+          <% for a in @lookup_crypto %>
+              <% if crypto.symbol == a["symbol"] %>
+                <td><%= link_to a["name"], crypto %></td>
+                <!-- if you need accurate crypto price with decimals, remove the number_to_currency ruby method -->
+                <td><%= a["price_usd"]%></td>
+                <td><%= a["price_usd"].to_d * crypto.amount_owned %></td>
+              <% end %>
+          <% end %>
+                <td><%= crypto.amount_owned %></td>
+                <td><%= crypto.cost_per %></td>
+          </tr>
       <% end %>  
     <% end %>
   </tbody>

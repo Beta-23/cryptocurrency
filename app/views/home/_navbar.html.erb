@@ -20,7 +20,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
-                <li><a><%= link_to "Portfolio", cryptos_path %></a></li>
+                <li><a><%= link_to "My Portfolio", cryptos_path %></a></li>
                 <li><a><%= link_to "Add-Crypto", new_crypto_path %></a></li>
                 <li><a><li><%= link_to "Search-Crypto", search_crypto_path %></li></a></li>
                 <li role="separator" class="divider"></li>
