@@ -13,6 +13,7 @@ class CryptosController < ApplicationController
     @response = Net::HTTP.get(@uri)
    # converts response to a Ruby hash 
     @lookup_crypto = JSON.parse(@response)
+    @gain_loss = 0
   end
 
   # GET /cryptos/1
