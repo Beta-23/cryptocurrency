@@ -15,6 +15,8 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'sassc'
 
+gem "loofah", ">= 2.3.1"
+
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
