@@ -1,14 +1,34 @@
-<%= link_to 'Back', cryptos_path %>
-<br />
-<br />
-<p>
-  <strong>Symbol:</strong>
+<% for a in @show_crypto %>
+    <% if @crypto.symbol.upcase == a["symbol"] %>
+        <!-- if you need accurate crypto price with decimals, remove the number_to_currency ruby method -->
+      <% crypto_name = a["name"] %>
+      <% crypto_price = a["price_usd"] %>
+      <% crypto_rank = a["rank"] %>
+    <% end %> 
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= crypto_name %></h3>
+  </div>
+  <div class="panel-body">
+<h1>
   <%= @crypto.symbol.upcase %>
+</h1>
+<br />
+
+<p>
+  <strong>Current Price:</strong>
+  <%= number_to_currency (crypto_price) %>
 </p>
 
 <p>
-  <strong>Cost Per:</strong>
-  <%= @crypto.cost_per %>
+  <strong>Rank:</strong>
+  [<%= crypto_rank %>]
+</p>
+<p>
+  <strong>Cost Per Crypto:</strong>
+  <%= number_to_currency (@crypto.cost_per) %>
 </p>
 
 <p>
@@ -16,5 +36,11 @@
   <%= @crypto.amount_owned %>
 </p>
 
-<%= link_to 'Edit', edit_crypto_path(@crypto) %> |
-<%= link_to 'Delete', crypto_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_crypto_path(@crypto) %> |
+    <%= link_to 'Delete', crypto_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'My Portfolio', cryptos_path %></div>
+  </div>
+</div>
+
+
