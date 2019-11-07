@@ -5,10 +5,14 @@
     <tr>
       <th>Name</th>
       <th>Symbol</th>
+      <th>Rank</th>
       <th>Current Price</th>
       <th>Current Value</th>
       <th>Cost Basis</th>
       <th>Gain/Loss</th>
+      <th>1 hr. Change</th>
+      <th>24 hr. Change</th>
+      <th>7 Days Change</th>
       <th>Cost Per Crypto </th>
       <th>Quantity</th>  
     </tr>
@@ -25,6 +29,7 @@
               <% if crypto.symbol == a["symbol"] %>
                 <td><%= link_to a["name"], crypto %></td>
                 <td><%= crypto.symbol %></td>
+                <td>[<%= a["rank"] %>]</td>
                 <!-- if need to change decimal total value, use the ruby helper method: number_to_currency (a["price_usd"]) and .to_d converts string into decimal-->
                 <td>$<%= a["price_usd"] %></td>
                 <!-- Current Value -->
@@ -33,6 +38,9 @@
                 <td><%= number_to_currency (crypto.cost_per * crypto.amount_owned) %></td>
                 <!-- Gain/Loss -->
                 <td><%= number_to_currency ((a["price_usd"].to_d * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)) %></td>
+                <td><%= a["percent_change_1h"] %>%</td>
+                <td><%= a["percent_change_24h"] %>%</td>
+                <td><%= a["percent_change_7d"] %>%</td>
               <% end %>
           <% end %>
           <!-- Cost Per Crypto -->
