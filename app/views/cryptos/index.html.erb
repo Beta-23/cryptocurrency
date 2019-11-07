@@ -38,6 +38,8 @@
                 <td><%= number_to_currency (crypto.cost_per * crypto.amount_owned) %></td>
                 <!-- Gain/Loss -->
                 <td><%= number_to_currency ((a["price_usd"].to_d * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)) %></td>
+                <% @gain_loss += (a["price_usd"].to_d * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned).to_d %>
+                <!-- Percent Change -->
                 <td><%= a["percent_change_1h"] %>%</td>
                 <td><%= a["percent_change_24h"] %>%</td>
                 <td><%= a["percent_change_7d"] %>%</td>
@@ -53,6 +55,8 @@
   </tbody>
 </table>
 
-<br>
+<strong>Portfolio Gains/Loss: </strong><%= number_to_currency (@gain_loss) %>*
+<br />
+<br />
 
 <%= link_to 'New Crypto', new_crypto_path, class:"btn btn-info" %>
