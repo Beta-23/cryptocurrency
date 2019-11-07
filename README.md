@@ -7,8 +7,8 @@ Things you may want to cover:
 
 * Ruby version
 
-```
-Ruby 2.4
+```Ruby
+Ruby ~> 2.5.7, >= 2.5.5
 ```
 * System dependencies
 ```
