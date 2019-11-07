@@ -10,10 +10,10 @@
 <% if @symbol %>
   <% for a in @search_coin %>
       <% if @symbol == a["symbol"] %>
-        <%= a["name"]%> : $<%= a["price_usd"] %><br />
-        Rank: <%= a["rank"] %><br />
+        <%= a["name"]%>: <%= number_to_currency (a["price_usd"]) %><br />
+        Rank: [<%= a["rank"] %>]<br />
         Available Supply: <%= a["available_supply"] %> <br />
-        7 Day Percent Change: <%= a["percent_change_7d"] %>
+        7 Day Percent Change: <%= a["percent_change_7d"] %>%
       <% end %>   
   <% end %>
 <% end %>
