@@ -13,6 +13,8 @@ gem 'puma', '~> 4.2', '>= 4.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'sassc'
+
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
