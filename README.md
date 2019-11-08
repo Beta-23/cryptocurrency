@@ -23,15 +23,31 @@ Bootstrap-sass, >= 3.4.1
 Used the CoinMarketCap API
 ```
 RESTful JSON endpoints
+
+https://api.coinmarketcap.com/v1/ticker/
 ```
 
 * Database creation
+```Ruby
+ sqlite3, < 1.4 for Develoment and Test
+ ```
 
-* Database initialization
+ ```Ruby
+ PostgreSQL for Production
+ ```
+## Deployment instructions
+ > Check Heroku documentation:
+  * [Managing Your Heroku Account](https://devcenter.heroku.com/articles/heroku-cli#download-and-install "Download and The Heroku CLI")
 
-* How to run the test suite
+  * [Managing Your Heroku SSH Keys](https://devcenter.heroku.com/articles/keys "Managing Your Heroku SSH Keys") 
+  
+ > After Heroku login and SSH keys setup:
+  
+   1. Type `heroku create` in command line
+   2. Check if remote has been created type `git remote -v`
+   3. Rename remotes name `git remote rename ('new name')`
+   4. Ensure all code commits are staged and pushed to master `git add .`and, `git commit -m "comments"` then `git push`
+   5. Type `git push heroku master`
+   6. Migrate your database by running `heroku run rake db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
