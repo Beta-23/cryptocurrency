@@ -2,28 +2,18 @@ class CryptosController < ApplicationController
   before_action :set_crypto, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :logged_user, only: [:edit, :show, :update, :destroy]
-  require 'net/http'
-  require 'json'
+
   # GET /cryptos
   # GET /cryptos.json
   def index
     @cryptos = Crypto.all
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-   # converts response to a Ruby hash 
-    @lookup_crypto = JSON.parse(@response)
-    @gain_loss = 0
+
   end
 
   # GET /cryptos/1
   # GET /cryptos/1.json
   def show
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-   # converts response to a Ruby hash 
-    @show_crypto = JSON.parse(@response)
+   
   end
 
   # GET /cryptos/new
