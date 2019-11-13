@@ -4,11 +4,11 @@ module CoinMarketCapApi
     require 'json'
 
     included do
-    before_action :set_api
-    before_action :set_search_api
-    before_action :main_page_api
-    before_action :show_page_api
-  end
+      before_action :set_api
+      before_action :set_search_api
+      before_action :main_page_api
+      before_action :show_page_api
+    end
 
   # instance method to fetch JSON data from coinmarketcap and parse it
 def set_api
