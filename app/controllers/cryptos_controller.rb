@@ -7,7 +7,7 @@ class CryptosController < ApplicationController
   # GET /cryptos.json
   def index
     @cryptos = Crypto.all
-
+    @page_title = "My | Crypto Portfolio"
   end
 
   # GET /cryptos/1
@@ -19,10 +19,12 @@ class CryptosController < ApplicationController
   # GET /cryptos/new
   def new
     @crypto = Crypto.new
+    @page_title = "New | Cryptocurrency"
   end
 
   # GET /cryptos/1/edit
   def edit
+    @page_title = "Edit | Cryptocurrency"
   end
 
   # POST /cryptos
