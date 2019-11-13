@@ -1,4 +1,4 @@
-module CoinMarketCapApi
+module CoinMarketApi
   extend ActiveSupport::Concern
     require 'net/http'
     require 'json'
@@ -11,7 +11,7 @@ module CoinMarketCapApi
     end
 
   # instance method to fetch JSON data from coinmarketcap and parse it
-def set_api
+  def set_api
     @url = 'https://api.coinmarketcap.com/v1/ticker/'
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
