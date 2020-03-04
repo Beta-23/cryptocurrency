@@ -10,10 +10,14 @@ ruby '>= 2.5.5'
 gem 'rails', '~> 5.1.7'
 # Use Puma as the app server
 gem "puma", ">= 4.3.3"
+
+gem 'nokogiri', '~> 1.10', '>= 1.10.8'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
 gem 'sassc'
+
 
 gem "loofah", ">= 2.3.1"
 

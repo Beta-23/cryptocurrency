@@ -213,8 +213,8 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   loofah (>= 2.3.1)
+  nokogiri (~> 1.10, >= 1.10.8)
   pg
-  dependabot/bundler/nokogiri-1.10.8
   puma (>= 4.3.3)
   rack (~> 2.1, >= 2.1.2)
   rails (~> 5.1.7)
