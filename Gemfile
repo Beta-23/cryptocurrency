@@ -7,13 +7,20 @@ end
 
 ruby '2.5.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2', '>= 5.2.4.2'
+gem 'rails'
 # Use Puma as the app server
-gem "puma", ">= 4.3.3"
+gem "puma"
 
-gem "actionview", ">= 5.2.4.2"
+gem "actionview"
 
-gem 'nokogiri', '~> 1.10', '>= 1.10.8'
+gem 'nokogiri'
+
+gem "activesupport"
+
+gem "actionpack"
+
+gem "activestorage"
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
