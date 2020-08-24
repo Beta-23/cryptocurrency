@@ -17,8 +17,6 @@ gem 'nokogiri'
 
 gem "activesupport"
 
-gem "actionpack"
-
 gem "activestorage"
 
 
@@ -54,7 +52,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rack', '~> 2.2'
 
-
+gem "actionpack", ">= 6.0.3.2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
